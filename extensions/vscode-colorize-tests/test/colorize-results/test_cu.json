@@ -8864,7 +8864,7 @@
 	{
 		"c": "highHalf",
 		"t": "source.cuda-cpp meta.function.definition.cuda-cpp meta.body.function.definition.cuda-cpp meta.block.cuda-cpp variable.other.property.cuda-cpp",
-		"r": {
+		"r":!{
 			"dark_plus": "variable: #9CDCFE",
 			"light_plus": "variable: #001080",
 			"dark_vs": "default: #D4D4D4",

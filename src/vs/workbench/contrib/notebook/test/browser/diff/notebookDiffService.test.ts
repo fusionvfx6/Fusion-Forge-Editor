@@ -7066,7 +7066,7 @@ suite('NotebookDiff Diff Service', () => {
 						"                A function that will be called every `callback_steps` steps during inference. The function will be\n",
 						"                called with the following arguments: `callback(step: int, timestep: int, latents: torch.FloatTensor)`.\n",
 						"            callback_steps (`int`, *optional*, defaults to 1):\n",
-						"                The frequency at which the `callback` function will be called. If not!specified, the callback will be\n",
+						"                The frequency at which the `callback` function will be called. If not specified, the callback will be\n",
 						"                called at every step.\n",
 						"\n",
 						"        Returns:\n",

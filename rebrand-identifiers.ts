@@ -27,15 +27,15 @@ async function main() {
 
     console.log("Loading source files...");
     const files = project.getSourceFiles("src/vs/workbench/contrib/void/**/*.ts");
-    
+
     let renamedCount = 0;
 
     for (const sourceFile of files) {
         for (const [oldName, newName] of Object.entries(renames)) {
-            const decl = sourceFile.getClass(oldName) || 
-                         sourceFile.getInterface(oldName) || 
-                         sourceFile.getTypeAlias(oldName) || 
-                         sourceFile.getEnum(oldName) || 
+            const decl = sourceFile.getClass(oldName) ||
+                         sourceFile.getInterface(oldName) ||
+                         sourceFile.getTypeAlias(oldName) ||
+                         sourceFile.getEnum(oldName) ||
                          sourceFile.getFunction(oldName) ||
                          sourceFile.getVariableDeclaration(oldName);
             if (decl) {
