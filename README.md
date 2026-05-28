@@ -396,7 +396,7 @@ A: The original Void Editor team is exploring new innovations. This fork is avai
 A: Yes! Through Ollama or by configuring a compatible provider. See the codebase for implementation details.
 
 **Q: How do I report bugs?**
-A: Create an issue on GitHub or email hello@voideditor.com
+A: Create an issue on [GitHub](https://github.com/fusionvfx6/Fusion-Forge-Editor/issues)
 
 **Q: Can I contribute?**
 A: Absolutely! See the [Contributing Guide](./HOW_TO_CONTRIBUTE.md)

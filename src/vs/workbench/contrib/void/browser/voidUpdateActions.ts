@@ -21,7 +21,7 @@ import { IAction } from '../../../../base/common/actions.js';
 
 
 const notifyUpdate = (res: FusionForgeCheckUpdateResponse & { message: string }, notifService: INotificationService, updateService: IUpdateService): INotificationHandle => {
-	const message = res?.message || 'This is a very old version of Void, please download the latest version! [Void Editor](https://voideditor.com/download-beta)!'
+	const message = res?.message || 'This is a very old version of Fusion Forge, please download the latest version! [Fusion Forge Editor](https://github.com/fusionvfx6/Fusion-Forge-Editor/releases)!'
 
 	let actions: INotificationActions | undefined
 
@@ -37,7 +37,7 @@ const notifyUpdate = (res: FusionForgeCheckUpdateResponse & { message: string },
 				class: undefined,
 				run: () => {
 					const { window } = dom.getActiveWindow()
-					window.open('https://voideditor.com/download-beta')
+					window.open('https://github.com/fusionvfx6/Fusion-Forge-Editor/releases')
 				}
 			})
 		}
@@ -82,17 +82,17 @@ const notifyUpdate = (res: FusionForgeCheckUpdateResponse & { message: string },
 			})
 		}
 
-		primary.push({
-			id: 'void.updater.site',
-			enabled: true,
-			label: `Void Site`,
-			tooltip: '',
-			class: undefined,
-			run: () => {
-				const { window } = dom.getActiveWindow()
-				window.open('https://voideditor.com/')
-			}
-		})
+			primary.push({
+				id: 'void.updater.site',
+				enabled: true,
+				label: `Fusion Forge Site`,
+				tooltip: '',
+				class: undefined,
+				run: () => {
+					const { window } = dom.getActiveWindow()
+					window.open('https://github.com/fusionvfx6/Fusion-Forge-Editor')
+				}
+			})
 
 		actions = {
 			primary: primary,
@@ -127,7 +127,7 @@ const notifyUpdate = (res: FusionForgeCheckUpdateResponse & { message: string },
 	// })
 }
 const notifyErrChecking = (notifService: INotificationService): INotificationHandle => {
-	const message = `Void Error: There was an error checking for updates. If this persists, please get in touch or reinstall Void [here](https://voideditor.com/download-beta)!`
+	const message = `Fusion Forge Error: There was an error checking for updates. If this persists, please visit GitHub or reinstall Fusion Forge [here](https://github.com/fusionvfx6/Fusion-Forge-Editor/releases)!`
 	const notifController = notifService.notify({
 		severity: Severity.Info,
 		message: message,

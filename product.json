@@ -7,8 +7,8 @@
 	"dataFolderName": ".fusion-forge",
 	"win32MutexName": "fusionforge",
 	"licenseName": "MIT",
-	"licenseUrl": "https://github.com/voideditor/void/blob/main/LICENSE.txt",
-	"serverLicenseUrl": "https://github.com/voideditor/void/blob/main/LICENSE.txt",
+	"licenseUrl": "https://github.com/fusionvfx6/Fusion-Forge-Editor/blob/main/LICENSE.txt",
+	"serverLicenseUrl": "https://github.com/fusionvfx6/Fusion-Forge-Editor/blob/main/LICENSE.txt",
 	"serverGreeting": [],
 	"serverLicense": [],
 	"serverLicensePrompt": "",
@@ -29,7 +29,7 @@
 	"darwinBundleIdentifier": "com.fusionforge.editor",
 	"linuxIconName": "fusion-forge",
 	"licenseFileName": "LICENSE.txt",
-	"reportIssueUrl": "https://github.com/voideditor/void/issues/new",
+	"reportIssueUrl": "https://github.com/fusionvfx6/Fusion-Forge-Editor/issues/new",
 	"nodejsRepository": "https://nodejs.org",
 	"urlProtocol": "void",
 	"extensionsGallery": {
@@ -38,9 +38,7 @@
 	},
 	"builtInExtensions": [],
 	"linkProtectionTrustedDomains": [
-		"https://voideditor.com",
-		"https://voideditor.dev",
-		"https://github.com/voideditor/void",
+		"https://github.com/fusionvfx6/Fusion-Forge-Editor",
 		"https://ollama.com"
 	]
 }

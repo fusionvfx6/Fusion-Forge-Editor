@@ -100,8 +100,8 @@ const newOpenAICompatibleSDK = async ({ settingsOfProvider, providerName, includ
 			baseURL: 'https://openrouter.ai/api/v1',
 			apiKey: thisConfig.apiKey,
 			defaultHeaders: {
-				'HTTP-Referer': 'https://voideditor.com', // Optional, for including your app on openrouter.ai rankings.
-				'X-Title': 'Void', // Optional. Shows in rankings on openrouter.ai.
+				'HTTP-Referer': 'https://github.com/fusionvfx6/Fusion-Forge-Editor', // Optional, for including your app on openrouter.ai rankings.
+				'X-Title': 'Fusion Forge', // Optional. Shows in rankings on openrouter.ai.
 			},
 			...commonPayloadOpts,
 		})
