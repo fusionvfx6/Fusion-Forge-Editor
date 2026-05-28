@@ -820,7 +820,7 @@ export class AutocompleteService extends Disposable implements IAutocompleteServ
 					if (numNewlines > 5) {
 						const lastNewlinePos = fullText.lastIndexOf('\n')
 						newAutocompletion.insertText = fullText.substring(0, lastNewlinePos)
-						
+
 						newAutocompletion.endTime = Date.now()
 						newAutocompletion.status = 'finished'
 						const [text, _] = extractCodeFromRegular({ text: newAutocompletion.insertText, recentlyAddedTextLen: 0 })
@@ -831,7 +831,7 @@ export class AutocompleteService extends Disposable implements IAutocompleteServ
 						}
 
 						resolve(newAutocompletion.insertText)
-						
+
 						if (newAutocompletion.requestId) {
 							this._llmMessageService.abort(newAutocompletion.requestId)
 						}

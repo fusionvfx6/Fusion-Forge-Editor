@@ -134,7 +134,7 @@ If you want to know how to build Fusion Forge, see our main repository [here](ht
 
 For additional references, the Fusion Forge team put together this list of links to get up and running with VSCode.
 <details>
-	
+
 
 #### Links for Beginners
 
