@@ -1,0 +1,14 @@
+# Node / build
+node_modules/
+dist/
+out/
+build/
+.vscode/
+.env
+.DS_Store
+*.log
+*.bak
+# LFS metadata
+.gitattributes
+# OS
+Thumbs.db
