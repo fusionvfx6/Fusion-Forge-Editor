@@ -9,6 +9,5 @@ build/
 *.log
 *.bak
 # LFS metadata
-.gitattributes
 # OS
 Thumbs.db
