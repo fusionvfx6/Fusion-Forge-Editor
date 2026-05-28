@@ -349,20 +349,9 @@ See [HOW_TO_CONTRIBUTE.md](./HOW_TO_CONTRIBUTE.md) for detailed guidelines.
 
 ## 🔗 Support & Links
 
-### Official Resources
-- 🌐 **Website**: [voideditor.com](https://voideditor.com)
-- 💬 **Discord**: [Join our community](https://discord.gg/RSNjgaugJs)
-- 📋 **Project Board**: [GitHub Projects](https://github.com/orgs/voideditor/projects/2)
-- 📧 **Email**: [hello@voideditor.com](mailto:hello@voideditor.com)
-
 ### Repository
-- 🍴 **Original Void Editor**: [voideditor/void](https://github.com/voideditor/void)
-- 🔱 **This Fork**: [fusionvfx6/Fusion-Forge-Editor](https://github.com/fusionvfx6/Fusion-Forge-Editor)
-- 👨‍💻 **Based on**: [microsoft/vscode](https://github.com/microsoft/vscode)
-
-### Related Projects
-- 🛠️ **Void Builder**: [void-builder](https://github.com/voideditor/void-builder) - Build tool for custom versions
-- 📦 **VS Code**: [microsoft/vscode](https://github.com/microsoft/vscode) - Base editor
+- 🔱 **This Repository**: [fusionvfx6/Fusion-Forge-Editor](https://github.com/fusionvfx6/Fusion-Forge-Editor)
+- 👨‍💻 **Based on**: [microsoft/vscode](https://github.com/microsoft/vscode) - Original VS Code
 
 ---
 
