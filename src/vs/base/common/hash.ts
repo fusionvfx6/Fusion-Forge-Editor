@@ -93,7 +93,9 @@ export const hashAsync = (input: string | ArrayBufferView | VSBuffer) => {
 		buff = input;
 	}
 
-	return crypto.subtle.digest('sha-1', buff).then(toHexString);
+	// Convert to Uint8Array with ArrayBuffer buffer to fix SharedArrayBuffer issue
+ view = new Uint8Array(buff.buffer, buff.byteOffset, buff.length);
+ crypto.subtle.digest('sha-1', view).then(toHexString);
 };
 
 const enum SHA1Constant {

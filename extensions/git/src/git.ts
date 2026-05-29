@@ -77,7 +77,7 @@ function findSpecificGit(path: string, onValidate: (path: string) => boolean): P
 		const child = cp.spawn(path, ['--version']);
 		child.stdout.on('data', (b: Buffer) => buffers.push(b));
 		child.on('error', cpErrorHandler(e));
-		child.on('close', code => code ? e(new Error(`Not found. Code: ${code}`)) : c({ path, version: parseVersion(Buffer.concat(buffers).toString('utf8').trim()) }));
+		child.on('close', code => code ? e(new Error(`Not found. Code: ${code}`)) : c({ path, version: parseVersion(Buffer.concat(buffers.map(b => new Uint8Array(b.buffer, b.byteOffset, b.length))).toString('utf8').trim()) }));
 	});
 }
 
@@ -226,12 +226,12 @@ async function exec(child: cp.ChildProcess, cancellationToken?: CancellationToke
 		new Promise<Buffer>(c => {
 			const buffers: Buffer[] = [];
 			on(child.stdout!, 'data', (b: Buffer) => buffers.push(b));
-			once(child.stdout!, 'close', () => c(Buffer.concat(buffers)));
+			once(child.stdout!, 'close', () => c(Buffer.concat(buffers.map(b => new Uint8Array(b.buffer, b.byteOffset, b.length)))));
 		}),
 		new Promise<string>(c => {
 			const buffers: Buffer[] = [];
 			on(child.stderr!, 'data', (b: Buffer) => buffers.push(b));
-			once(child.stderr!, 'close', () => c(Buffer.concat(buffers).toString('utf8')));
+			once(child.stderr!, 'close', () => c(Buffer.concat(buffers.map(b => new Uint8Array(b.buffer, b.byteOffset, b.length))).toString('utf8')));
 		})
 	]) as Promise<[number, Buffer, string]>;
 
@@ -1401,12 +1401,12 @@ export class Repository {
 			.filter(entry => !!entry);
 	}
 
-	async buffer(ref: string, filePath: string): Promise<Buffer> {
+	async buffer(ref: string, filePath: string): Promise<Uint8Array> {
 		const relativePath = sanitizeRelativePath(this.repositoryRoot, filePath);
 		const child = this.stream(['show', '--textconv', `${ref}:${relativePath}`]);
 
 		if (!child.stdout) {
-			return Promise.reject<Buffer>('Can\'t open file from git');
+			return Promise.reject<Uint8Array>('Can\'t open file from git');
 		}
 
 		const { exitCode, stdout, stderr } = await exec(child);
@@ -1421,10 +1421,10 @@ export class Repository {
 				err.gitErrorCode = GitErrorCodes.WrongCase;
 			}
 
-			return Promise.reject<Buffer>(err);
+			return Promise.reject<Uint8Array>(err);
 		}
 
-		return stdout;
+		return new Uint8Array(stdout.buffer, stdout.byteOffset, stdout.length);
 	}
 
 	async getObjectDetails(treeish: string, path: string): Promise<{ mode: string; object: string; size: number }> {

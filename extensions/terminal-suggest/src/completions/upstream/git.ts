@@ -2301,7 +2301,7 @@ const configSuggestions: Fig.Suggestion[] = [
 		insertValue: "http.{cursor}.minSessions",
 		description:
 			"The number of curl sessions (counted across slots) to be kept across requests. They will not be ended with curl_easy_cleanup() until http_cleanup() is invoked. If USE_CURL_MULTI is not defined, this value will be capped at 1. Defaults to 1",
-	}-
+	},
 	{
 		name: "http.<url>.noEPSV",
 		insertValue: "http.{cursor}.noEPSV",

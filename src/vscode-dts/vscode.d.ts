@@ -9648,7 +9648,7 @@ declare module 'vscode' {
 		 * @param oldUri The existing file.
 		 * @param newUri The new location.
 		 * @param options Defines if existing files should be overwritten.
-		 * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `omdUri` doesn't exist.
+		 * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when `oldUri` doesn't exist.
 		 * @throws {@linkcode FileSystemError.FileNotFound FileNotFound} when parent of `newUri` doesn't exist, e.g. no mkdirp-logic required.
 		 * @throws {@linkcode FileSystemError.FileExists FileExists} when `newUri` exists and when the `overwrite` option is not `true`.
 		 * @throws {@linkcode FileSystemError.NoPermissions NoPermissions} when permissions aren't sufficient.
@@ -16561,7 +16561,8 @@ declare module 'vscode' {
 	 * Represents a debug adapter running as a Named Pipe (on Windows)/UNIX Domain Socket (on non-Windows) based server.
 	 */
 	export class DebugAdapterNamedPipeServer {
-		/**		 * The path to the NamedPipe/UNIX Domain Socket.
+		/**
+		 * The path to the NamedPipe/UNIX Domain Socket.
 		 */
 		readonly path: string;
 

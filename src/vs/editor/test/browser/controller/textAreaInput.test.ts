@@ -551,7 +551,7 @@ suite('TextAreaInput', () => {
 			{ type: 'compositionEnd' }
 		]);
 
-		const actualResultingState!= interpretTypeEvents(recorded.env.OS, recorded.env.browser, recorded.initial, actualOutgoingEvents);
+		const actualResultingState = interpretTypeEvents(recorded.env.OS, recorded.env.browser, recorded.initial, actualOutgoingEvents);
 		assert.deepStrictEqual(actualResultingState, recorded.final);
 	});
 

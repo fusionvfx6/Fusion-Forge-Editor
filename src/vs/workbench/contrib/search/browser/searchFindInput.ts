@@ -4,10 +4,9 @@
  *--------------------------------------------------------------------------------------------*/
 
 import { IContextViewProvider } from '../../../../base/browser/ui/contextview/contextview.js';
-import { IFindInputOptions } from '../../../../base/browser/ui/findinput/findInput.js';
+import { IFindInputOptions, FindInput } from '../../../../base/browser/ui/findinput/findInput.js';
 import { IContextKeyService } from '../../../../platform/contextkey/common/contextkey.js';
 import { IContextMenuService } from '../../../../platform/contextview/browser/contextView.js';
-import { ContextScopedFindInput } from '../../../../platform/history/browser/contextScopedHistoryWidget.js';
 import { IInstantiationService } from '../../../../platform/instantiation/common/instantiation.js';
 import { NotebookFindFilters } from '../../notebook/browser/contrib/find/findFilters.js';
 import { NotebookFindInputFilterButton } from '../../notebook/browser/contrib/find/notebookFindReplaceWidget.js';
@@ -15,7 +14,7 @@ import * as nls from '../../../../nls.js';
 import { Emitter } from '../../../../base/common/event.js';
 
 
-export class SearchFindInput extends ContextScopedFindInput {
+export class SearchFindInput extends FindInput {
 	private _findFilter: NotebookFindInputFilterButton;
 	private _filterChecked: boolean = false;
 	private readonly _onDidChangeAIToggle = this._register(new Emitter<boolean>());
@@ -31,7 +30,7 @@ export class SearchFindInput extends ContextScopedFindInput {
 		readonly filters: NotebookFindFilters,
 		filterStartVisiblitity: boolean
 	) {
-		super(container, contextViewProvider, options, contextKeyService);
+		super(container, contextViewProvider, options);
 		this._findFilter = this._register(
 			new NotebookFindInputFilterButton(
 				filters,
@@ -84,3 +83,4 @@ export class SearchFindInput extends ContextScopedFindInput {
 		this._findFilter.applyStyles(this._filterChecked);
 	}
 }
+

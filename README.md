@@ -2,7 +2,7 @@
 
 <div align="center">
 	<img
-		src="./src/vs/workbench/browser/parts/editor/media/slice_of_void.png"
+		src="./src/vs/workbench/browser/parts/editor/media/slice_of_fusionforge.png"
 	 	alt="Fusion Forge Editor"
 		width="300"
 	 	height="300"
@@ -319,7 +319,7 @@ Fusion Forge supports multiple AI providers:
 - **Ollama**: Local models (self-hosted)
 
 ### Configuration
-AI settings are configured in the editor settings or through environment variables. See `src/vs/workbench/contrib/void/browser/` for implementation details.
+AI settings are configured in the editor settings or through environment variables. See `src/vs/workbench/contrib/fusionforge/browser/` for implementation details.
 
 ---
 
@@ -369,7 +369,7 @@ This project is licensed under the **MIT License** - see the [LICENSE.txt](./LIC
 
 - **Name**: Fusion Forge Editor
 - **Version**: 1.99.3
-- **Void Version**: 1.4.9
+- **FusionForge Version**: 1.4.9
 - **Based on**: Microsoft VS Code
 - **Built with**: TypeScript, Electron, React, Tailwind CSS
 - **Package**: Node.js + npm
@@ -390,7 +390,7 @@ This project is licensed under the **MIT License** - see the [LICENSE.txt](./LIC
 ## ❓ FAQ
 
 **Q: Is this still actively maintained?**
-A: The original Void Editor team is exploring new innovations. This fork is available for community development.
+A: The original FusionForge Editor team is exploring new innovations. This fork is available for community development.
 
 **Q: Can I use my own AI model?**
 A: Yes! Through Ollama or by configuring a compatible provider. See the codebase for implementation details.
@@ -406,7 +406,7 @@ A: Absolutely! See the [Contributing Guide](./HOW_TO_CONTRIBUTE.md)
 ## 🙌 Acknowledgments
 
 - Microsoft for the amazing [VS Code](https://github.com/microsoft/vscode) foundation
-- The Void Editor team for the AI integration architecture
+- The FusionForge Editor team for the AI integration architecture
 - All contributors and community members
 
 ---

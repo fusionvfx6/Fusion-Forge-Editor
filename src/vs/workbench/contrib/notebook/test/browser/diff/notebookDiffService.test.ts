@@ -11931,7 +11931,7 @@ suite('NotebookDiff Diff Service', () => {
 						"                frame = cv2.resize(\n",
 						"                    src=frame,\n",
 						"                    dsize=None,\n",
-						"!                   fx=scale,\n",
+						"                    fx=scale,\n",
 						"                    fy=scale,\n",
 						"                    interpolation=cv2.INTER_AREA,\n",
 						"                )\n",

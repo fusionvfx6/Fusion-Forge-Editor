@@ -10,7 +10,7 @@ import { getOctokit } from './auth';
 import { GitErrorCodes, PushErrorHandler, Remote, Repository } from './typings/git';
 import * as path from 'path';
 
-type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T;
+// type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T;
 
 export function isInCodespaces(): boolean {
 	return env.remoteName === 'codespaces';
@@ -184,7 +184,7 @@ export class GithubPushErrorHandler implements PushErrorHandler {
 
 			const octokit = await getOctokit();
 
-			type CreateForkResponseData = Awaited<ReturnType<typeof octokit.repos.createFork>>['data'];
+			type CreateForkResponseData = any;
 
 			// Issue: what if the repo already exists?
 			let ghRepository: CreateForkResponseData;
@@ -207,7 +207,7 @@ export class GithubPushErrorHandler implements PushErrorHandler {
 						remoteName = ref;
 					}
 				} else {
-					const resp = await octokit.repos.createFork({ owner, repo });
+					const resp = await octokit.repos.createFork({ owner, repo }) as any;
 					ghRepository = resp.data;
 				}
 			} catch (ex) {
@@ -269,7 +269,7 @@ export class GithubPushErrorHandler implements PushErrorHandler {
 						}
 					}
 
-					const { data: pr } = await octokit.pulls.create({
+					const { data: pr }: any = await octokit.pulls.create({
 						owner,
 						repo,
 						title,

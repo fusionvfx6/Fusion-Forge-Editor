@@ -36,7 +36,7 @@ export class GithubRemoteSourceProvider implements RemoteSourceProvider {
 			const repository = getRepositoryFromUrl(query);
 
 			if (repository) {
-				const raw = await octokit.repos.get(repository);
+				const raw = await octokit.repos.get(repository) as any;
 				return [asRemoteSource(raw.data)];
 			}
 		}
@@ -59,9 +59,9 @@ export class GithubRemoteSourceProvider implements RemoteSourceProvider {
 
 	private async getUserRemoteSources(octokit: Octokit, query?: string): Promise<RemoteSource[]> {
 		if (!query) {
-			const user = await octokit.users.getAuthenticated({});
+			const user = await octokit.users.getAuthenticated({}) as any;
 			const username = user.data.login;
-			const res = await octokit.repos.listForAuthenticatedUser({ username, sort: 'updated', per_page: 100 });
+			const res = await octokit.repos.listForAuthenticatedUser({ username, sort: 'updated', per_page: 100 }) as any;
 			this.userReposCache = res.data.map(asRemoteSource);
 		}
 
@@ -81,7 +81,7 @@ export class GithubRemoteSourceProvider implements RemoteSourceProvider {
 
 		query += ` fork:true`;
 
-		const raw = await octokit.search.repos({ q: query, sort: 'stars' });
+		const raw = await octokit.search.repos({ q: query, sort: 'stars' }) as any;
 		return raw.data.items.map(asRemoteSource);
 	}
 
@@ -98,17 +98,17 @@ export class GithubRemoteSourceProvider implements RemoteSourceProvider {
 		let page = 1;
 
 		while (true) {
-			const res = await octokit.repos.listBranches({ ...repository, per_page: 100, page });
+			const res = await octokit.repos.listBranches({ ...repository, per_page: 100, page }) as any;
 
 			if (res.data.length === 0) {
 				break;
 			}
 
-			branches.push(...res.data.map(b => b.name));
+			branches.push(...res.data.map((b: any) => b.name));
 			page++;
 		}
 
-		const repo = await octokit.repos.get(repository);
+		const repo = await octokit.repos.get(repository) as any;
 		const defaultBranch = repo.data.default_branch;
 
 		return branches.sort((a, b) => a === defaultBranch ? -1 : b === defaultBranch ? 1 : 0);

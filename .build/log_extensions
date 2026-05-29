@@ -1,0 +1,1 @@
+[{"path":"H:/void-main/extensions/git/src/api/api1.ts","line":132,"column":3,"message":"Type 'Promise<Uint8Array<ArrayBufferLike>>' is not assignable to type 'Promise<Buffer>'.\n  Type 'Uint8Array<ArrayBufferLike>' is missing the following properties from type 'Buffer': write, toJSON, equals, compare, and 66 more."}]

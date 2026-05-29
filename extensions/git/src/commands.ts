@@ -1,4 +1,4 @@
-/*---------------------------------------------------------------------------------------------
+﻿/*---------------------------------------------------------------------------------------------
  *  Copyright (c) Microsoft Corporation. All rights reserved.
  *  Licensed under the MIT License. See License.txt in the project root for license information.
  *--------------------------------------------------------------------------------------------*/
@@ -1507,8 +1507,8 @@ export class CommandCenter {
 
 		if (uris.length > 0) {
 			const config = workspace.getConfiguration('git', Uri.file(repository.root));
-			const untsackedChanges = config.get<'mixed' | 'separate' | 'hidden'>('untrackedChanges');
-			await repository.add(uris, untrackedChanges === 'mixed' ? undefined : { update: true });
+		const untrackedChanges = config.get<'mixed' | 'separate' | 'hidden'>('untrackedChanges');
+		await repository.add(uris, untrackedChanges === 'mixed' ? undefined : { update: true });
 		}
 	}
 

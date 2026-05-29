@@ -60,7 +60,7 @@ export async function publishRepository(gitAPI: GitAPI, repository?: Repository)
 	let octokit: Octokit;
 	try {
 		octokit = await getOctokit();
-		const user = await octokit.users.getAuthenticated({});
+		const user = await octokit.users.getAuthenticated({}) as any;
 		owner = user.data.login;
 	} catch (e) {
 		// User has cancelled sign in
@@ -173,13 +173,13 @@ export async function publishRepository(gitAPI: GitAPI, repository?: Repository)
 			increment: 25
 		});
 
-		type CreateRepositoryResponseData = Awaited<ReturnType<typeof octokit.repos.createForAuthenticatedUser>>['data'];
+		type CreateRepositoryResponseData = any;
 		let createdGithubRepository: CreateRepositoryResponseData | undefined = undefined;
 
 		if (isInCodespaces()) {
 			createdGithubRepository = await vscode.commands.executeCommand<CreateRepositoryResponseData>('github.codespaces.publish', { name: repo!, isPrivate });
 		} else {
-			const res = await octokit.repos.createForAuthenticatedUser({
+			const res: any = await octokit.repos.createForAuthenticatedUser({
 				name: repo!,
 				private: isPrivate
 			});
